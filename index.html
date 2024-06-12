@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="qw"></div>
+    <h1>Asadbek</h1>
+    <script>
+        let a = document.querySelector('h1');
+        let b = document.body
+        let c = document.querySelector('div')
+        console.log(c.scrollWidth);
+        a.addEventListener('mouseover', () => {
+            b.style.background = '#000'
+            // a.style.color = "#000"
+            c.style.borderColor = '#fff'
+            c.style.width = '350px'
+            c.style.height = '350px'
+            c.style.background = '#fff'
+
+        })
+        a.addEventListener('mouseout', () => {
+            b.style.background = '#fff';
+            // a.style.color = "#fff";
+            c.style.borderColor = '#000'
+            c.style.width = '50px'
+            c.style.height = '50px'
+        })
+        window.addEventListener('mousemove', (e) => {
+            c.style.transform = `translateX(calc(${e.clientX}px - ${c.scrollWidth/2}px)) translateY(calc(${e.clientY}px - ${c.scrollWidth/2}px))`;
+        })
+    </script>
+</body>
+</html>
